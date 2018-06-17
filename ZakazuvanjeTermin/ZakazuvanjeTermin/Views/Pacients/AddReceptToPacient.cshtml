@@ -1,0 +1,16 @@
+﻿@model ZakazuvanjeTermin.Models.AddReceptToPacient
+@{
+    ViewBag.Title = "AddReceptToPacient";
+}
+
+<h2>AddReceptToPacient</h2>
+
+@using (Html.BeginForm("AddReceptToPacient", "Pacients"))
+{
+    <div class="form-group">
+        @Html.DropDownListFor(model => model.ReceptID, new SelectList(Model.recepti, "Id", "Name"), new {@class="form-control"})
+    </div>
+    @Html.HiddenFor(model => model.PacientID);
+    <button type="submit" class="btn btn-success">Add</button>
+}
+
